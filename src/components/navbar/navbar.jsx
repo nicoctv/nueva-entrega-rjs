@@ -1,20 +1,21 @@
-import CartWidget from '../cartwidget/cartwidget';
-import './navbar.css';
-import { Button } from 'antd';
+import React from "react";
+import './navbar.css'
+const Navbar = ({ handleCategoria }) =>{
+    
+   const cambiarCategoria = () =>{
 
-const Navbar = () => {
+   }
+   
     return (
-        <div>
-            <h1>Grow Shop Green Zone</h1>
-            <div>
-                <nav>
-                <Button type="primary">Jardineria</Button>
-                <Button type="primary">Kits//Sedas</Button>
-                <Button type="primary">Tierras sustratos</Button>
-                <CartWidget />
-                </nav>
-            </div>
+        <div className="navbar">
+            <h1 onClick={() => cambiarCategoria ('all')}> Green Zone Grow Shop</h1>
+            <p>Tierras</p>
+            <p onClick={() => cambiarCategoria ('jewelery')}>Fertilizantes</p>
+            <p onClick={() => cambiarCategoria ('electronics')}>Luces</p>
+            <p>sedas</p>
+            < CartWidget />
         </div>
     )
-};
+}
+
 export default Navbar;

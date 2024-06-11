@@ -1,12 +1,15 @@
+import { useState } from 'react'
 import './App.css'
-import ItemListContainer from './components/containers/ItemListContainers/ItemListContainer'
 import Navbar from './components/navbar/navbar'
-import { Button } from 'antd';
+import ItemListContainer from './containers/itemListContainer/itemListContainer'
 
 function App() {
-  return (
-    <Navbar />
-   <ItemListContainer greeting={'Bienvenido'}/>
+  const [categoria, setCategoria] = useState ('all')
+    return (
+  <>
+    <Navbar handleCategoria = {setCategoria} />
+    <ItemListContainer categoria = {categoria} />
+    </>
   )
 }
 
